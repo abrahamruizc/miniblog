@@ -6,10 +6,18 @@ var logger = require('morgan');
 require('dotenv').config();
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+
+var mongoose = require('mongoose');
 //var postsRouter = require('./routes/posts');
 
-var app = express();
+mongoose.set('strictQuery', false); //requerido para quitar el warning
+mongoose.connect(process.env.DB_URI, { useNewUrlParser: true })
+.then(() => console.log('connection successful'))
+.catch((err) => console.error(err));
+var db = mongoose.connection;
 
+var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -41,3 +49,8 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+
+
+
