@@ -1,4 +1,4 @@
-GET http://localhost:5000/users
+GET http://localhost:5000/users/todo
 ###
 GET http://localhost:5000/users/123
 
@@ -8,12 +8,13 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "id": 124,
-    "name": "Juan Perez",
-    "phones": {
-    "home ": "999 999 888",
-    "mobile": "666 555 444"
-}}
+    "username": "jgarcia",
+    "password": "qwerty",
+    "fullname": "José García",
+    "email": "jg@example.com",
+    "role": "subscriber"
+}
+
 
 ###
 
@@ -23,3 +24,33 @@ PUT http://localhost:5000/users/123
 ###
 
 DELETE http://localhost:5000/users/123
+
+
+###
+
+GET http://localhost:5000/posts
+
+### 
+
+PUT http://localhost:5000/users/63e1446b9c1e3cc5a2fb4e07
+
+###
+
+DELETE http://localhost:5000/users/63e1446b9c1e3cc5a2fb4e07
+
+###
+
+POST http://localhost:5000/users/signin
+
+{
+    "username": "jgarcia",
+    "password": "qwerty"
+}
+
+###
+
+GET http://localhost:5000/users?username=tgomez
+
+### 
+
+POST http://localhost:5000/users/subscriber
