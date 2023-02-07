@@ -1,0 +1,16 @@
+GET http://localhost:5000/posts/
+
+###
+
+GET http://localhost:5000/posts/all/63e144139c1e3cc5a2fb4e05
+
+###
+
+# POST http://localhost:5000/posts
+ Content-Type: application/json
+
+{
+     "iduser":"63e144139c1e3cc5a2fb4e05",
+     "title": "TITULO1",   
+     "description": "es un post muy extraño"
+}
